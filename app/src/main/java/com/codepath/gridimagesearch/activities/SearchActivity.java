@@ -1,6 +1,5 @@
 package com.codepath.gridimagesearch.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,11 +10,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.Toast;
 
+import com.codepath.gridimagesearch.R;
 import com.codepath.gridimagesearch.adapters.ImageResultsAdapter;
 import com.codepath.gridimagesearch.models.ImageResult;
-import com.codepath.gridimagesearch.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -33,15 +31,16 @@ public class SearchActivity extends AppCompatActivity {
     private GridView gvResults;
     private ArrayList<ImageResult> imageResults;
     private ImageResultsAdapter aImageResults;
+    private final int SETTINGS_CODE = 20;
 
     public void onSettings(MenuItem  v) {
-        Context context = getApplicationContext();
-        CharSequence text = "MenuItem";
-        int duration = Toast.LENGTH_SHORT;
+        //Context context = getApplicationContext();
+        //CharSequence text = "MenuItem";
+         //int duration = Toast.LENGTH_SHORT;
+        //Toast toast = Toast.makeText(context, text, duration);
+        //toast.show();
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
+     startActivity(new Intent(this,SettingsActivity.class));
 
 
     }
