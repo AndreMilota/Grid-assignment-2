@@ -33,6 +33,11 @@ public class SearchActivity extends AppCompatActivity {
     private ImageResultsAdapter aImageResults;
     private final int SETTINGS_CODE = 20;
 
+    private String picColor;
+    private String picSize;
+    private String picType;
+    private String picsite;
+
     public void onSettings(MenuItem  v) {
         //Context context = getApplicationContext();
         //CharSequence text = "MenuItem";
@@ -40,9 +45,15 @@ public class SearchActivity extends AppCompatActivity {
         //Toast toast = Toast.makeText(context, text, duration);
         //toast.show();
 
-     startActivity(new Intent(this,SettingsActivity.class));
+     //startActivity(new Intent(this,SettingsActivity.class));
 
-
+        Intent i = new Intent(this, SettingsActivity.class);
+        i.putExtra("color",picColor);
+        i.putExtra("size", picSize);
+        i.putExtra("type", picType);
+        i.putExtra("site", picsite);
+        // brings up the second activity
+        startActivityForResult(i, SETTINGS_CODE);
     }
 
 
@@ -57,6 +68,12 @@ public class SearchActivity extends AppCompatActivity {
         aImageResults = new ImageResultsAdapter(this, imageResults);
         // link the adaptor to the view
         gvResults.setAdapter(aImageResults);
+
+        picColor = null;
+        picSize = null;
+        picType = null;
+        picsite = null;
+
     }
 
     private void setupViews(){

@@ -57,9 +57,10 @@
         android:layout_alignParentStart="true" />
 
     <Spinner
+        android:entries="@array/display_types"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/spnTypes"
         android:layout_alignTop="@+id/textView3"
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2"
@@ -79,9 +80,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_below="@+id/spinner"
+        android:layout_below="@+id/spnTypes"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_lable"
+        android:onClick="onSave"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

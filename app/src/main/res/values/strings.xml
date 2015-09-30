@@ -11,6 +11,7 @@
     <string name="color_label">Color</string>
     <string name="type_lable">Type</string>
     <string name="domain">Domain</string>
+    <string name="save_lable">Save</string>
 
 
     <string-array name="display_sizes">
@@ -61,7 +62,7 @@
         <item>yellow</item>
     </string-array>
 
-    <string-array name="display_typess">
+    <string-array name="display_types">
         <item>All</item>
         <item>Faces</item>
         <item>Photo</item>
@@ -69,7 +70,7 @@
         <item>Line Art</item>
     </string-array>
 
-    <string-array name="send_typess">
+    <string-array name="send_types">
         <item>All</item>
         <item>faces</item>
         <item>photo</item>

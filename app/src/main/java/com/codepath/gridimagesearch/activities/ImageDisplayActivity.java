@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso;
 
 public class ImageDisplayActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
