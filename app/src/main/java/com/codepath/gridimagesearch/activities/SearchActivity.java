@@ -36,7 +36,7 @@ public class SearchActivity extends AppCompatActivity {
     private String picColor;
     private String picSize;
     private String picType;
-    private String picsite;
+    private String picSite;
 
     public void onSettings(MenuItem  v) {
         //Context context = getApplicationContext();
@@ -51,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
         i.putExtra("color",picColor);
         i.putExtra("size", picSize);
         i.putExtra("type", picType);
-        i.putExtra("site", picsite);
+        i.putExtra("site", picSite);
         // brings up the second activity
         startActivityForResult(i, SETTINGS_CODE);
     }
@@ -69,10 +69,10 @@ public class SearchActivity extends AppCompatActivity {
         // link the adaptor to the view
         gvResults.setAdapter(aImageResults);
 
-        picColor = null;
-        picSize = null;
-        picType = null;
-        picsite = null;
+        picColor = "All";
+        picSize = "All";
+        picType = "All";
+        picSite = "";
 
     }
 
@@ -158,5 +158,16 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // REQUEST_CODE is defined above
+        if (resultCode == RESULT_OK && requestCode == SETTINGS_CODE) {
+            picColor = data.getExtras().getString("color");
+            picSize = data.getExtras().getString("size");
+            picType = data.getExtras().getString("type");
+            picSite = data.getExtras().getString("site");
+        }
     }
 }
